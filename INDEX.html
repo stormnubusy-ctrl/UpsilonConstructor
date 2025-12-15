@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Upsilon Constructora S.A.</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+ --blue:#1e4fd8;
+ --dark:#0a1020;
+ --gray:#6b7280;
+ --shadow:0 12px 40px rgba(0,0,0,.35)
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Segoe UI,Arial,sans-serif;background:#f4f6fb;color:#111827}
+a{text-decoration:none;color:inherit}
+
+header{position:fixed;top:0;width:100%;z-index:100;background:rgba(10,16,32,.85);backdrop-filter:blur(10px)}
+.header-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 18px;color:white}
+.logo{display:flex;align-items:center;gap:12px}
+.logo svg{width:42px;height:42px}
+nav a{margin-left:20px;font-weight:600}
+
+.hero{height:100vh;overflow:hidden;position:relative}
+.carousel{display:flex;height:100%;transition:transform .7s ease}
+.slide{min-width:100%;height:100%;background-size:cover;background-position:center;position:relative}
+.overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.8))}
+.hero-text{position:absolute;bottom:20%;left:8%;max-width:520px;color:white}
+.hero-text h1{font-size:44px;margin-bottom:12px}
+.hero-text p{color:#dbeafe;font-size:18px}
+
+.arrow{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(0,0,0,.5);color:white;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.arrow.left{left:20px}
+.arrow.right{right:20px}
+
+.dots{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);display:flex;gap:10px}
+.dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer}
+.dot.active{background:var(--blue)}
+
+section{padding:90px 18px}
+.container{max-width:1200px;margin:auto}
+h2{text-align:center;margin-bottom:28px}
+
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.project{background:white;padding:22px;border-radius:14px;box-shadow:var(--shadow)}
+.project strong{color:var(--blue)}
+
+.prestige{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.prestige div{background:#fff;padding:20px;border-radius:14px;box-shadow:var(--shadow)}
+
+form{background:white;padding:26px;border-radius:16px;box-shadow:var(--shadow)}
+label{font-weight:600;font-size:14px}
+input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #c7d2fe;margin:6px 0 16px}
+button{background:var(--blue);color:white;border:none;padding:14px;border-radius:12px;font-weight:700;cursor:pointer;width:100%}
+
+footer{background:#0a1020;color:#9ca3af;padding:40px 18px}
+.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.socials a{font-size:20px;margin-right:14px}
+
+@media(max-width:900px){.hero-text h1{font-size:32px}}
+</style>
+</head>
+<body>
+
+<header>
+<div class="header-inner">
+<div class="logo">
+<svg viewBox="0 0 100 100" fill="none"><path d="M20 10 L50 55 L80 10" stroke="#1e4fd8" stroke-width="10"/><path d="M50 55 L50 90" stroke="#1e4fd8" stroke-width="10"/></svg>
+<strong>Upsilon Constructora S.A.</strong>
+</div>
+<nav>
+<a href="#proyectos">Proyectos</a>
+<a href="#contacto">Contacto</a>
+</nav>
+</div>
+</header>
+
+<div class="hero">
+<div class="carousel" id="carousel">
+<div class="slide" style="background-image:url('https://inarquia.es/wp-content/uploads/k2_items_src_f64b0864e862d3c122851be4770d6e9a.jpg')"><div class="overlay"></div><div class="hero-text"><h1>Ingeniería que proyecta futuro</h1><p>Diseñamos y conceptualizamos obras de alto impacto.</p></div></div>
+<div class="slide" style="background-image:url('https://res.cloudinary.com/dmtjmtvnj/image/upload/v1765035393/Constructora-Aeropuerto-Quito-1_nqslyz.jpg')"><div class="overlay"></div></div>
+</div>
+<div class="arrow left" onclick="prev()"><i class="fas fa-chevron-left"></i></div>
+<div class="arrow right" onclick="next()"><i class="fas fa-chevron-right"></i></div>
+<div class="dots" id="dots"></div>
+</div>
+
+<section id="proyectos">
+<div class="container">
+<h2>Proyectos (simulados)</h2>
+<div class="projects">
+<div class="project"><strong>Edificio Delta</strong><p>Área: 4.800 m²<br>Precio: COP $12.500 millones<br>Compra: Llave en mano<br>Desde: 80 m² – $320 millones</p></div>
+<div class="project"><strong>Conjunto Sigma</strong><p>Área: 6.200 m²<br>Precio: COP $18.000 millones<br>Compra: Preventa<br>Desde: 60 m² – $260 millones</p></div>
+<div class="project"><strong>Torre Lambda</strong><p>Área: 3.900 m²<br>Precio: COP $9.800 millones<br>Compra: Sobre planos<br>Desde: 45 m² – $210 millones</p></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2>Constructoras de referencia</h2>
+<div class="prestige">
+<div><strong>Conconcreto</strong><p>Infraestructura y vivienda a gran escala.</p></div>
+<div><strong>Amarilo</strong><p>Desarrollo urbano y proyectos residenciales.</p></div>
+<div><strong>Odinsa</strong><p>Obras civiles y concesiones viales.</p></div>
+</div>
+</div>
+</section>
+
+<section id="contacto">
+<div class="container">
+<h2>Contacto directo por WhatsApp</h2>
+<form onsubmit="sendWhats(event)">
+<label>Nombre</label><input id="name" required>
+<label>Celular</label><input id="phone" required>
+<label>Proyecto de interés</label><textarea id="msg" required></textarea>
+<button>Enviar a WhatsApp</button>
+</form>
+</div>
+</section>
+
+<footer>
+<div class="footer-grid">
+<div><strong>Upsilon Constructora S.A.</strong><p>Proyecto académico – visión profesional.</p></div>
+<div class="socials">
+<a href="https://www.instagram.com/sergiomancol15" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.youtube.com/@jaramillomoraconstructorasa" target="_blank"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+</footer>
+
+<script>
+const carousel=document.getElementById('carousel');
+const slides=document.querySelectorAll('.slide');
+const dotsContainer=document.getElementById('dots');
+let index=0;
+slides.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===0?' active':'');d.onclick=()=>go(i);dotsContainer.appendChild(d)});
+function update(){carousel.style.transform=`translateX(-${index*100}%)`;document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===index))}
+function next(){index=(index+1)%slides.length;update()}
+function prev(){index=(index-1+slides.length)%slides.length;update()}
+function go(i){index=i;update()}
+setInterval(next,7000);
+function sendWhats(e){e.preventDefault();const text=`Hola, soy ${name.value}. Mi número es ${phone.value}. Me interesa el siguiente proyecto: ${msg.value}`;window.open(`https://wa.me/573170638702?text=${encodeURIComponent(text)}`,'_blank')}
+</script>
+
+</body>
+</html>
